@@ -1,0 +1,436 @@
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: "Montserrat", sans-serif;
+}
+
+p {
+  font-family: "Roboto Slab", serif;
+}
+
+:root {
+  --red: rgb(152,0,0); 
+  --white: white; 
+}
+
+/* NAVBAR START */
+.navigation-header {
+  background-color: var(--red);
+  padding: 0 15px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-container>a {
+  color: ghostwhite;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 26px;
+}
+
+.logo-container>a>img {
+  height: 5vh;
+  display: flex;
+  align-items: center;
+}
+
+.navigation-items {
+  display: flex;
+  gap: 40px;
+}
+
+
+.navigation-items>a {
+  color: ghostwhite;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  transition: .4s ease-in-out;
+}
+
+.navigation-items>a:hover {
+  color: white;
+}
+
+.hamburger {
+  display: none;
+  font-size: 20px;
+  font-weight: 800;
+  color: white;
+}
+
+@media screen and (max-width:768px) {
+  .hamburger {
+    display: flex;
+    cursor: pointer;
+  }
+
+  .hamburger #closeHam {
+    display: none;
+  }
+
+  .navigation-items {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    top: 58px;
+    background-color: var(--red);
+    color: white;
+    width: 100%;
+    max-height: 42vh;
+    height: 100%;
+    padding-top: 60px;
+    z-index: 1;
+  }
+}
+
+/* NAVBAR END */
+
+/* LANDING PAGE START */
+.landing-page {
+  position: relative;
+  background-image: url('../img/bg.jpg');
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #f0f0f0;
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+/* LANDING PAGE END */
+
+/* search bar start */
+
+.search-card {
+  width: 50vw;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.search-card h1 {
+  color: var(--red);
+  font-size: 2.5em;
+  justify-content: center;
+}
+
+.header {
+  background-color: var(--red);
+  color: white;
+  border-radius: 5px;
+  padding: 15px;
+  text-align: center; 
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 5px;
+  margin-top: 10px; 
+}
+
+.dropdown {
+  position: relative;
+  margin-right: 10px;
+}
+
+.dropdown-toggle {
+  background-color: var(--red);
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background-color: #fff;
+  color: var(--red);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  list-style: none;
+  padding: 5px 0;
+}
+
+.dropdown-menu li {
+  padding: 8px 15px;
+}
+
+.dropdown-menu li:hover {
+  background-color: #f5f5f5;
+}
+
+.dropdown.open .dropdown-menu {
+  display: block;
+}
+
+input[type="text"] {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 8px 10px;
+  font-size: 16px;
+  width: 100%;
+}
+
+/* search bar end */
+
+/* how start */
+.how {
+  margin: 5px 10px;
+  max-width: 100%;
+  max-height: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.how>h2::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -5px;
+  width: 25%;
+  height: 2px;
+  background-color: var(--red);
+}
+
+/* how end */
+
+/* card start */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  width: 49%;
+  margin: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 15px;
+}
+
+.top,
+.bottom {
+  width: calc(50% - 20px);
+}
+/* card end */
+
+/* aside start */
+aside {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+}
+
+.news {
+  display: flex;
+  align-items: center;
+  margin: 10px 5px;
+  padding: 0 10px;
+  max-width: 100%;
+}
+
+.news img {
+  min-width: 50%;
+  min-height: 50%;
+  max-width: 30vw;
+  max-height: 50vh;
+  height: auto;
+}
+
+.text-content {
+  flex-grow: 1;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.text-content h2 {
+  margin: 0;
+}
+
+@media only screen and (max-width: 600px) {
+
+  .news {
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  .news img {
+    align-items: flex-start;
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .text-content {
+    padding: 0;
+    width: 100%;
+  }
+}
+
+/* aside end */
+
+/* footer start */
+.footer {
+  background-color: var(--red);
+  color: white;
+  padding: 20px;
+  text-align: center;
+
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0 12vw;
+}
+
+.footer-container h1 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.footer-container p {
+  margin-bottom: 10px;
+}
+
+.social-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.social-links li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.social-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  color: #000;
+}
+
+.copyright {
+  text-align: center;
+  font-size: 0.8em;
+  margin-top: 10px;
+}
+
+
+
+
+@media only screen and (max-width: 600px) {
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-container h1 {
+    margin-bottom: 5px;
+  }
+}
+
+/* footer end */
+
+/* scrollbar start */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: white;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--red);
+}
+/* scrollbar end */
+
+/* button start */
+.read-more-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  text-decoration: none;
+  color: #fff;
+  background-color: var(--red);
+  transition: all 0.3s ease-in-out;
+}
+
+.read-more-btn:hover {
+  background-color: transparent;
+  border: 2px solid var(--red);
+  outline: none;
+  color: white;
+}
+
+
+@media (max-width: 768px) {
+  .read-more-btn {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .read-more-btn {
+    padding: 8px 16px;
+  }
+}
+
+/* button end */
